@@ -1,0 +1,42 @@
+.all{
+    padding: 30px;
+}
+.con_li {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.input{
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: grey;
+    border: solid 1px rgb(176, 174, 174);
+}
+/* .input:focus{
+    border:solid blue;
+} */
+.title{
+    font-size: 30px;
+    color: black;
+
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    border: solid 1px rgb(176, 174, 174);
+    background-color: white;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.btn:focus {
+    border: solid blue;
+}
