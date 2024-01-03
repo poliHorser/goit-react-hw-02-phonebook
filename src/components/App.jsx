@@ -1,11 +1,11 @@
 import { nanoid } from 'nanoid'
 import { Component } from 'react';
 
-import First from './CreateForm'
+import Form from './CreateForm'
 import './All.css'
 import data from './data.json'
 import ContactList from './ContactList'
-
+import Filter from './Filter'
 
 
 class App extends Component  {
@@ -17,12 +17,14 @@ class App extends Component  {
 
   createContact = (data) => {
     const userNew = {
-      ...data,
-      id: nanoid()
+      id: nanoid(),
+      ...data
     }
 
     const isDubl = this.state.contacts.find((el) => el.name === data.name)
-    if (isDubl) return
+    if (isDubl) {
+      return alert (`${data.name} is already in contacts`)
+    }
       
     
     this.setState((prevState) => ({
@@ -34,12 +36,31 @@ class App extends Component  {
       contacts: prev.contacts.filter((el) =>el.id !== id)
     }))
   }
+
+  handleChange = (e) => {
+    this.setState({ filter: e.target.value });
+  };
+
+  getFilteredContacts = () => {
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+  };
   
   render() {
+    const filterContacts = this.getFilteredContacts()
+    const { filter } = this.state;
     return (
       <div className='all' >
-        <First createContact={this.createContact} />
-        <ContactList contacts={this.state.contacts} contactDelete={this.contactDelete} />
+        <h1 className='title_book'>Phonebook</h1>
+        <Form createContact={this.createContact} />
+         <Filter value={filter} onChange={this.handleChange} />
+        <ContactList contacts={filterContacts}
+                     contactDelete={this.contactDelete}/>
+        
       </div>
     
     );

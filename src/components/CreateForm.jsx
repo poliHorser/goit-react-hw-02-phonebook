@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import data from './data.json'
 
-class First extends Component {
+
+class Form extends Component {
 
     
     state = {
-        contacts: data,
-        filter: '',
         name: '',
         number: ''
     }
@@ -14,15 +12,11 @@ class First extends Component {
     handleChange = ({ target: { value, name } }) => {
         console.log('value:', value)
         return this.setState({
-            [name]: value 
+            [name]: value.trim() 
         })
        
     }
 
-    createContact = () => {
-        
-    }
-    
     
     handleSubmit = (e) => {
         e.preventDefault()
@@ -36,7 +30,8 @@ class First extends Component {
 
 
     render() {
-        return (<form className='div' onSubmit={this.handleSubmit}>
+        return (
+            <form className='form' onSubmit={this.handleSubmit}>
             <div>
                 <h2 className='title'>Name</h2>
                 <input className='input'
@@ -45,7 +40,7 @@ class First extends Component {
                        value={this.state.name}
                        onChange={this.handleChange}
                     required />
-                <label for=""></label>
+                <label htmlFor=''></label>
             </div>
             <div>
                 <h2 className='title'>Number</h2>
@@ -55,7 +50,7 @@ class First extends Component {
                        value={this.state.number}
                        onChange={this.handleChange}
                     required />
-                <label for=""></label>
+                <label htmlFor=''></label>
             </div>
              <button className='btn'>
                     <p> Add to contact list</p>
@@ -64,4 +59,4 @@ class First extends Component {
         )
     }
 }
-export default First
+export default Form
