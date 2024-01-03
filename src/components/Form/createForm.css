@@ -1,0 +1,38 @@
+.form {
+    width: 350px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+}
+
+.input {
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: grey;
+    border: solid 1px rgb(176, 174, 174);
+}
+
+.title {
+    font-size: 30px;
+    color: black;
+
+}
+
+
+.btn {
+    border: solid 1px rgb(176, 174, 174);
+    background-color: rgb(136, 195, 246);
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.btn:focus {
+    border: solid blue;
+}

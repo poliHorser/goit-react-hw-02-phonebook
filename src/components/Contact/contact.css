@@ -1,0 +1,25 @@
+.con_li {
+    height: 50px;
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.li_title {
+    font-size: 25px;
+}
+
+.li_title span {
+    font-style: italic;
+    margin-right: 20px;
+}
+
+.li_btn {
+    border: solid 1px rgb(0, 0, 0);
+    background-color: rgb(245, 195, 195);
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-
+import './contact.css'
 const Contact = ({ contacts, contactDelete}) => {
     return (
         <li className="con_li">

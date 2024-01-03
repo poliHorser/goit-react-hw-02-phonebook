@@ -1,11 +1,10 @@
 import { nanoid } from 'nanoid'
 import { Component } from 'react';
 
-import Form from './CreateForm'
-import './All.css'
-import data from './data.json'
-import ContactList from './ContactList'
-import Filter from './Filter'
+import Form from './Form/CreateForm'
+import data from 'data/data'
+import ContactList from './ContactList/ContactList'
+import Filter from './Filter/Filter'
 
 
 class App extends Component  {
@@ -54,8 +53,8 @@ class App extends Component  {
     const filterContacts = this.getFilteredContacts()
     const { filter } = this.state;
     return (
-      <div className='all' >
-        <h1 className='title_book'>Phonebook</h1>
+      <div className='all'>
+        <h1>Phonebook</h1>
         <Form createContact={this.createContact} />
          <Filter value={filter} onChange={this.handleChange} />
         <ContactList contacts={filterContacts}
