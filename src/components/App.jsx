@@ -20,16 +20,18 @@ class App extends Component  {
       ...data
     }
 
-    const isDubl = this.state.contacts.find((el) => el.name === data.name)
+     const isDubl = this.state.contacts.find(
+      (el) => el.name.toLowerCase() === data.name.toLowerCase()
+    );
+
     if (isDubl) {
-      return alert (`${data.name} is already in contacts`)
+      return alert(`${data.name} is already in contacts`);
     }
-      
-    
+
     this.setState((prevState) => ({
-        contacts: [...prevState.contacts, userNew]
-      }))
-  }
+      contacts: [...prevState.contacts, userNew],
+    }));
+  };
   contactDelete = (id) => {
     this.setState((prev) => ({
       contacts: prev.contacts.filter((el) =>el.id !== id)
